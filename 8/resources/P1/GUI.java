@@ -103,10 +103,9 @@ public class GUI{
 
 
 		        JTable t;
-		        DefaultTableModel model = (DefaultTableModel) t.getModel();
-		        model.setRowCount(0);
+		        
 
-				String[] col = {"Values","Verification status"};
+				String[] col = {"Plain-text","Result"};
 				t = new JTable(data,col);
 				t.setBounds(30,40,200,300);
 
