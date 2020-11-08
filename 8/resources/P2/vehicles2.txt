@@ -1,0 +1,7 @@
+WBA303, Honda, Chris Morris, Car
+HRY712, Scania, Ashish Kumar, Truck
+MHA569, Hyundai, Chen Wang, Car
+UPY234, Hero, Ambrish, Truck
+UPY239, BMW, Rahul Prajapat, Car
+RJK234, Alto, Taarak Mehta, Car
+MUM199, Mahindra, Roshan Singh Sodhi, Truck
