@@ -30,12 +30,15 @@ class StreamingApp
 
 			Map<String,Integer> cval = new HashMap<String,Integer>();
 
+			Integer maxval = 0;
+
 			for(String mov:k){
 				cval.merge(genremov.get(mov),1,Integer::sum);
+				// System.out.println(cval.get(genremov).get(mov));
+				if(maxval < cval.get(genremov.get(mov))){
+					maxval = cval.get(genremov.get(mov));
+				}
 			}
-			// System.out.println("----");
-			//System.out.println(Arrays.asList(cval));
-			Integer maxval = Collections.max(cval.values());
 
 			for(Map.Entry< String,Integer > cv:cval.entrySet()){
 				if(cv.getValue() == maxval){
@@ -76,7 +79,7 @@ class StreamingApp
 
 			
 
-	// 		// System.out.println(Arrays.asList(usermov));
+	// 		//System.out.println(Arrays.asList(usermov));
 
 
 	// 		alli.add("The conjuring");
