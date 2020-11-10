@@ -38,6 +38,7 @@ class ProtectedTree extends Tree{
         if(val_out == value){
             // logic
             System.out.println("RS");
+            r++;
             return val_out;
         }else{
             // logic
