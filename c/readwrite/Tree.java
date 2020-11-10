@@ -10,7 +10,7 @@ class Tree{
         left = right = null;
     }
 
-    public void write(int _key){
+    public void write(int _key) throws InterruptedException {
         if(assigned == false){
             key = _key;
             assigned = true;
@@ -31,7 +31,7 @@ class Tree{
         return;
     }
 
-    public int read(int _key){
+    public int read(int _key) throws InterruptedException {
         if(key == _key && assigned) return _key;
         
         if(_key < key){
