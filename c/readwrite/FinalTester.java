@@ -8,7 +8,14 @@ public class FinalTester{
         Thread w1 = new Thread(new ReaderWriter("w1.txt", ptree, true));
         Thread w2 = new Thread(new ReaderWriter("w2.txt", ptree, true));
 
-        r1.start(); r2.start(); w1.start(); w2.start();
-        r1.join(); r2.join(); w1.join(); w2.join();
+        r1.start(); 
+        r2.start(); 
+        w1.start(); 
+        w2.start();
+
+        r1.join(); 
+        r2.join(); 
+        w1.join(); 
+        w2.join();
     }
 }
