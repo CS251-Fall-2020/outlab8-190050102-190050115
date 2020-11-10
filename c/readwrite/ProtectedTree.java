@@ -12,7 +12,6 @@ class ProtectedTree extends Tree{
     static Integer syncVariable = 0;
     final Lock lock = new ReentrantLock();
     final Condition notWritten = lock.newCondition();
-    final Condition written = lock.newCondition();
 
     ProtectedTree(Tree t){
         tree = t;
@@ -27,7 +26,7 @@ class ProtectedTree extends Tree{
             this.tree.write(value);
             System.out.println("WX");
             w++;
-            written.signal();
+            notWritten.signal();
         } finally {
             lock.unlock();
         }
@@ -36,12 +35,10 @@ class ProtectedTree extends Tree{
     private int readUtil(int value) throws InterruptedException {
         int val_out = this.tree.read(value);
         if(val_out == value){
-            // logic
             System.out.println("RS");
             r++;
             return val_out;
         }else{
-            // logic
             System.out.println("RF");
             return val_out;
         }
@@ -50,18 +47,12 @@ class ProtectedTree extends Tree{
     public int read(int value) throws InterruptedException {
         lock.lock();
         try {
-            while(r < w){
+            while(r >= w){
                 notWritten.await();
             }
             return readUtil(value);
         } finally {
             lock.unlock();
         }
-    }
-    
-
-
-    public static void main(String args[]){
-        // ProtectedTree ptree = new ProtectedTree(new Tree());
     }
 }

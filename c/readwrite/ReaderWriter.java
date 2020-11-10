@@ -33,21 +33,20 @@ class ReaderWriter implements Runnable {
 
     @Override
     public void run() {
-        if(idx < inp.size()){
-            if(isWriter){
+        for(int idx=0; idx<inp.size(); idx++){
+            if(isWriter == true){
                 try{
                     ptree.write(inp.get(idx));
                 } catch (Exception ex){
-                    System.out.println(ex);
+                    System.out.println("Exception" + ex);
                 }
             }else{
                 try{
-                    ptree.read(inp.get(idx));
+                    int j = ptree.read(inp.get(idx));
                 } catch (Exception ex){
-                    System.out.println(ex);
+                    System.out.println("Exception" + ex);
                 }
             }
-            idx++;
         }
     }
 
