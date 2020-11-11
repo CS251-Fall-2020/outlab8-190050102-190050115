@@ -42,7 +42,7 @@ class ReaderWriter implements Runnable {
                 }
             }else{
                 try{
-                    int j = ptree.read(inp.get(idx));
+                    ptree.read(inp.get(idx));
                 } catch (Exception ex){
                     System.out.println("Exception" + ex);
                 }

@@ -43,15 +43,4 @@ class Tree{
         }
     }
 
-    // public static void main(String args[]) throws Exception{
-    //     Scanner sc = new Scanner(System.in);
-    //     Tree t = new Tree();
-    //     t.write(sc.nextInt());
-    //     t.write(sc.nextInt());
-    //     t.write(sc.nextInt());
-    //     t.write(sc.nextInt());
-
-    //     System.out.println(t.read(sc.nextInt()));
-    //     sc.close();
-    // }
 }
